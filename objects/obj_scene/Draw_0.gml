@@ -16,10 +16,6 @@ shader_set(shd_plane);
 shader_set_uniform_matrix_array(planeTransformUniform,plane.transformMat);
 vertex_submit(plane.vertexFrame,pr_trianglelist,-1);
 shader_reset();
-shader_set(shd_voxel);
-shader_set_uniform_matrix_array(objectTransformUniform,object.transformMat);
-vertex_submit(object.vertexFrame,pr_trianglelist,-1);
-shader_reset();
 
 
 
@@ -29,7 +25,7 @@ shader_reset();
 //matrix_set(matrix_projection,matrix_build_projection_ortho(1280,720,0,1000));
 shader_set(shd_intersect);
 shader_set_uniform_f_array(planeTransformUniformInt,plane.transformMat);
-shader_set_uniform_f_array(objectTransformUniformInt,invert(object.transformMat));
+shader_set_uniform_f_array(objectTransformUniformInt,invert(obj_player.object.transformMat));
 //shader_set_uniform_f_array(objectTransformUniformInt,object.transformMat);
 //shader_set_uniform_i(voxelMapUniform,buffer);
 shader_set_uniform_i(sizeXUniform,voxelMapXsize);

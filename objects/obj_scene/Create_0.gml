@@ -5,45 +5,12 @@
 show_debug_message("HEHEHE");
 Z=0;
 
-vertex_format_begin()
-vertex_format_add_position_3d();
-vertex_format_add_normal();
-vertex_format_add_color();
-vFormat=vertex_format_end();
-
-//voxel=vertex_create_cube(vFormat,1);
-
-object={
-	voxelMap:0,
-	voxelFrame:0,
-	vertexFrame:0,
-	position: [0,0,0],
-	rotation: [90,0,0],
-	scale: [1,1,1],
-	transformMat:0,
-	origin: [0,0,0]
-};
-object.voxelMap=voxel_load_map("torus.txt",-10,0,0,0.5);
-object.voxelFrame=voxel_get_frame(object.voxelMap);
-object.vertexFrame=vertex_get_frame(vFormat,object.voxelMap);
-object.transformMat=matrix_build(object.position[0],object.position[1],object.position[2],
-								object.rotation[0],object.rotation[1],object.rotation[2],
-								object.scale[0],object.scale[1],object.scale[2]);
-objectTransformUniform=shader_get_uniform(shd_voxel,"objectTransform");
-
-
-vertex_format_begin();
-vertex_format_add_position_3d();
-vertex_format_add_normal();
-vertex_format_add_color();
-vertex_format_add_texcoord();
-vFormatTex=vertex_format_end();
 
 plane={
-	vertexFrame: vertex_get_plane(vFormatTex),
+	vertexFrame: vertex_get_plane(global.vFormatTex),
 	position: [0,0,2],
 	rotation: [0,0,0],
-	scale: [100,100,100],
+	scale: [200,200,200],
 	transformMat: 0,
 	origin: [0,0,0]
 };
@@ -52,9 +19,9 @@ plane.transformMat=matrix_build(plane.position[0],plane.position[1],plane.positi
 								plane.scale[0],plane.scale[1],plane.scale[2]);
 planeTransformUniform=shader_get_uniform(shd_plane,"objectTransform");
 
-voxelMapXsize=array_length(object.voxelMap);
-voxelMapYsize=array_length(object.voxelMap[0]);
-voxelMapZsize=array_length(object.voxelMap[0][0]);
+voxelMapXsize=array_length(obj_player.object.voxelMap);
+voxelMapYsize=array_length(obj_player.object.voxelMap[0]);
+voxelMapZsize=array_length(obj_player.object.voxelMap[0][0]);
 //voxelMapXsize=20;
 //voxelMapYsize=20;
 //voxelMapZsize=20;
@@ -66,7 +33,7 @@ voxelMap1d=array_create(voxelMapXsize*voxelMapYsize*voxelMapZsize);
 //show_debug_message(voxelMap1d);
 show_debug_message(plane.transformMat);
 
-intersectMask=surface_create(1/object.scale[0]*plane.scale[0]*2,1/object.scale[0]*plane.scale[1]*2);
+intersectMask=surface_create(1/obj_player.object.scale[0]*plane.scale[0]*2,1/obj_player.object.scale[0]*plane.scale[1]*2);
 
 planeTransformUniformInt=shader_get_uniform(shd_intersect,"planeTransform");
 objectTransformUniformInt=shader_get_uniform(shd_intersect,"objectTransformInv");
@@ -94,7 +61,7 @@ for(var i=0; i<voxelMapXsize; i++){
 			var ind=i+j*voxelMapXsize+k*voxelMapXsize*voxelMapYsize;
 			var xx=ind%surfSize;
 			var yy=floor(ind/surfSize);
-			draw_point_color(xx,yy,make_color_rgb(object.voxelMap[i][j][k],0,0));
+			draw_point_color(xx,yy,make_color_rgb(obj_player.object.voxelMap[i][j][k],0,0));
 		}
 	}
 }
