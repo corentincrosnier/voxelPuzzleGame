@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 var cx,cy,mx,my;
 cx=window_get_width()/2;
 cy=window_get_height()/2;
@@ -27,6 +28,7 @@ z+= ud;
 
 global.viewMat=matrix_build_lookat(x,y,z,x+5*dcos(dx)*dcos(dy),y+5*dsin(dx)*dcos(dy),z+5*dsin(dy),0,0,1);
 global.projMat=matrix_build_projection_perspective_fov(fov_y,16/9,0.1,10000);
+
 
 
 

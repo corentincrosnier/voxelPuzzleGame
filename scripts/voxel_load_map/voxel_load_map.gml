@@ -7,9 +7,9 @@ function voxel_load_map(fileName,xx,yy,zz,size){
 	var minX=-1;
 	var minY=-1;
 	var minZ=-1;
-	var maxX=1;
-	var maxY=1;
-	var maxZ=1;
+	var maxX=0;
+	var maxY=0;
+	var maxZ=0;
 	
 	var arr=array_create(0);
 	while(!file_text_eof(file)){

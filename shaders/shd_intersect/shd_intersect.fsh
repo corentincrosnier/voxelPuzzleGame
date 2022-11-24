@@ -35,15 +35,6 @@ void main(){
 		if(targetY>=0 && targetY<=sizeY){
 			if(targetZ>=0 && targetZ<=sizeZ){
 				int ind=targetX+targetY*sizeX+targetZ*sizeX*sizeY;
-				/*
-				float surfX=mod(float(ind/4),float(surfWidth));
-				float surfY=float((ind/4)/surfWidth);
-				
-				
-				vec4 val=texture2D(voxelMap,vec2(surfX/float(surfWidth),surfY/float(surfHeight)));
-				int channel=int(mod(float(ind),4.0));
-				//if(int(voxelMap[ind])!=0){
-				*/
 				float surfX=mod(float(ind),float(surfSize));
 				float surfY=float((ind)/surfSize);
 				vec4 val=texture2D(voxelMap,vec2(surfX/float(surfSize),surfY/float(surfSize)));
