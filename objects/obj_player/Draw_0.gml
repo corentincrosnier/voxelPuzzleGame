@@ -9,7 +9,7 @@
 shader_set(shd_voxel);
 //matrix_stack_push(object.transformMat);
 //matrix_stack_push(object.origin);
-shader_set_uniform_matrix_array(objectTransformUniform,object.transformMat);
+shader_set_uniform_matrix_array(objectTransformUniform,object.transformOrigin);
 //matrix_stack_clear();
 vertex_submit(object.vertexFrame,pr_trianglelist,-1);
 shader_reset();

@@ -8,6 +8,7 @@
     {"id":{"name":"shd_plane","path":"shaders/shd_plane/shd_plane.yy",},"order":1,},
     {"id":{"name":"vertex_face_Zplus","path":"scripts/vertex_face_Zplus/vertex_face_Zplus.yy",},"order":5,},
     {"id":{"name":"vertex_add_cube_rgb","path":"scripts/vertex_add_cube_rgb/vertex_add_cube_rgb.yy",},"order":3,},
+    {"id":{"name":"matrix_apply_origin","path":"scripts/matrix_apply_origin/matrix_apply_origin.yy",},"order":4,},
     {"id":{"name":"shd_indentity","path":"shaders/shd_indentity/shd_indentity.yy",},"order":3,},
     {"id":{"name":"obj_global","path":"objects/obj_global/obj_global.yy",},"order":3,},
     {"id":{"name":"vertex_face_Xplus","path":"scripts/vertex_face_Xplus/vertex_face_Xplus.yy",},"order":1,},

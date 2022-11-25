@@ -3,8 +3,8 @@
 
 //draw_surface(obj_scene.voxelMapSurf,0,0);
 
-matrix_set(matrix_view,global.viewMat);
-matrix_set(matrix_projection,global.projMat);
+//matrix_set(matrix_view,global.viewMat);
+//matrix_set(matrix_projection,global.projMat);
 
 
 

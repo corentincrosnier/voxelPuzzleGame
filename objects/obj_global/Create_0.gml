@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-gpu_set_ztestenable(true);
+//gpu_set_ztestenable(true);
 
 vertex_format_begin()
 vertex_format_add_position_3d();

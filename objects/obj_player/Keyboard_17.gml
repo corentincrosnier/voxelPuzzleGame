@@ -8,6 +8,6 @@ object.transformMat=matrix_build(object.position[0],object.position[1],object.po
 								object.scale[0],object.scale[1],object.scale[2]);
 
 
-
+matrix_apply_origin(object);
 
 
