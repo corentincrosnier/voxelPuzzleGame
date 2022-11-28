@@ -61,7 +61,12 @@ for(var i=0; i<voxelMapXsize; i++){
 			var ind=i+j*voxelMapXsize+k*voxelMapXsize*voxelMapYsize;
 			var xx=ind%surfSize;
 			var yy=floor(ind/surfSize);
-			draw_point_color(xx,yy,make_color_rgb(obj_player.object.voxelMap[i][j][k],0,0));
+			var c;
+			if(obj_player.object.voxelMap[i][j][k]==1)
+				c=make_color_rgb(255,0,0);
+			else
+				c=make_color_rgb(0,0,0);
+			draw_point_color(xx,yy,c);
 		}
 	}
 }

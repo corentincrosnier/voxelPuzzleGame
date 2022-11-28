@@ -14,7 +14,7 @@ object={
 	transformMat:0,
 	origin: [0,0,0]
 };
-object.voxelMap=voxel_load_map("xyzrgb_dragon_171x77x114.txt",-10,0,0,0.5);
+object.voxelMap=voxel_load_map("torus.txt",-10,0,0,0.5);
 object.voxelFrame=voxel_get_frame(object.voxelMap);
 object.vertexFrame=vertex_get_frame(global.vFormat,object.voxelMap);
 object.transformMat=matrix_build(object.position[0],object.position[1],object.position[2],

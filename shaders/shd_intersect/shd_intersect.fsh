@@ -27,13 +27,13 @@ uniform int surfSize;
 void main(){
 	
 	
-	vec4 target = objectTransformInv * planeTransform * vec4((v_vTexcoord.x-0.5)*2.0,(v_vTexcoord.y-0.5)*2.0,0.0,1.0);
+	vec4 target = planeTransform * objectTransformInv * vec4((v_vTexcoord.x-0.5)*2.0,(v_vTexcoord.y-0.5)*2.0,0.0,1.0);
 	int targetX=int(target.x);
 	int targetY=int(target.y);
 	int targetZ=int(target.z);
-	if(targetX>=0 && targetX<=sizeX){
-		if(targetY>=0 && targetY<=sizeY){
-			if(targetZ>=0 && targetZ<=sizeZ){
+	if(target.x>=0.0 && targetX<sizeX){
+		if(target.y>=0.0 && targetY<sizeY){
+			if(target.z>=0.0 && targetZ<sizeZ){
 				int ind=targetX+targetY*sizeX+targetZ*sizeX*sizeY;
 				/*
 				float surfX=mod(float(ind/4),float(surfWidth));
@@ -45,7 +45,7 @@ void main(){
 				//if(int(voxelMap[ind])!=0){
 				*/
 				float surfX=mod(float(ind),float(surfSize));
-				float surfY=float((ind)/surfSize);
+				float surfY=float(floor(float(ind)/float(surfSize)));
 				vec4 val=texture2D(voxelMap,vec2(surfX/float(surfSize),surfY/float(surfSize)));
 				if(val.r>0.0){
 					gl_FragColor=vec4(0.0,0.0,0.0,1.0);
@@ -55,13 +55,13 @@ void main(){
 				}
 			}
 			else
-				gl_FragColor=vec4(0.0,0.0,1.0,1.0);
+				gl_FragColor=vec4(0.0,0.0,1.0,0.0);
 		}
 		else
-			gl_FragColor=vec4(0.0,1.0,0.0,1.0);
+			gl_FragColor=vec4(0.0,1.0,0.0,0.0);
 	}
 	else
-		gl_FragColor=vec4(1.0,0.0,0.0,1.0);
+		gl_FragColor=vec4(1.0,0.0,0.0,0.0);
 }
 /*
 
