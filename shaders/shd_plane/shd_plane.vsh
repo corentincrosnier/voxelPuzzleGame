@@ -24,8 +24,9 @@ void main()
     //v_vTexcoord = in_TextureCoord;
 	*/
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
+	vec2 texCoord = vec2((object_space_pos.x/200.0+1.0)/2.0,(object_space_pos.y/200.0+1.0)/2.0);
     gl_Position =  gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * objectTransform * object_space_pos;
     
     v_vColour = in_Colour;
-    v_vTexcoord = in_TextureCoord;
+    v_vTexcoord = texCoord;
 }
