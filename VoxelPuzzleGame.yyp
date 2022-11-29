@@ -18,6 +18,8 @@
     {"id":{"name":"shd_intersect","path":"shaders/shd_intersect/shd_intersect.yy",},"order":4,},
     {"id":{"name":"vertex_face_Ymin","path":"scripts/vertex_face_Ymin/vertex_face_Ymin.yy",},"order":2,},
     {"id":{"name":"shd_intersectOld","path":"shaders/shd_intersectOld/shd_intersectOld.yy",},"order":2,},
+    {"id":{"name":"obj_intersect","path":"objects/obj_intersect/obj_intersect.yy",},"order":3,},
+    {"id":{"name":"obj_renderer","path":"objects/obj_renderer/obj_renderer.yy",},"order":4,},
     {"id":{"name":"vertex_create_cube","path":"scripts/vertex_create_cube/vertex_create_cube.yy",},"order":4,},
     {"id":{"name":"voxel_load_map","path":"scripts/voxel_load_map/voxel_load_map.yy",},"order":0,},
     {"id":{"name":"string_split","path":"scripts/string_split/string_split.yy",},"order":1,},

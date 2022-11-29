@@ -28,6 +28,7 @@ void main(){
 	
 	
 	vec4 target = objectTransformInv * planeTransform * vec4((v_vTexcoord.x-0.5)*2.0,(v_vTexcoord.y-0.5)*2.0,0.0,1.0);
+	//vec4 target = objectTransformInv * planeTransform * vec4(v_vTexcoord.x,v_vTexcoord.y,0.0,1.0);
 	int targetX=int(target.x);
 	int targetY=int(target.y);
 	int targetZ=int(target.z);
@@ -48,20 +49,20 @@ void main(){
 				float surfY=float(floor(float(ind)/float(surfSize)));
 				vec4 val=texture2D(voxelMap,vec2(surfX/float(surfSize),surfY/float(surfSize)));
 				if(val.r>0.0){
-					gl_FragData[0]=vec4(0.0,0.0,0.0,1.0);
+					gl_FragColor=vec4(0.0,0.0,0.0,1.0);
 				}
 				else{
-					gl_FragData[0]=vec4(1.0,1.0,1.0,1.0);
+					gl_FragColor=vec4(1.0,1.0,1.0,1.0);
 				}
 			}
 			else
-				gl_FragData[0]=vec4(0.0,0.0,1.0,0.0);
+				gl_FragColor=vec4(0.0,0.0,1.0,1.0);
 		}
 		else
-			gl_FragData[0]=vec4(0.0,1.0,0.0,0.0);
+			gl_FragColor=vec4(0.0,1.0,0.0,1.0);
 	}
 	else
-		gl_FragData[0]=vec4(1.0,0.0,0.0,0.0);
+		gl_FragColor=vec4(1.0,0.0,0.0,1.0);
 }
 /*
 
