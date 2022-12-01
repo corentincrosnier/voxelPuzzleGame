@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
+global.collisionStep=1;
 
 global.intersectMask=surface_create(room_width,room_height);
 global.intersectW=surface_get_width(global.intersectMask);
