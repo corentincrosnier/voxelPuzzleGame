@@ -1,14 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-application_surface_draw_enable(false);
-
 
 plane={
 	vertexFrame: vertex_get_plane(global.vFormatTex),
-	position: [0,0,2],
+	position: [0,0,-1],
 	rotation: [0,0,0],
-	scale: [200,200,1],
+	scale: [room_width/2,room_height/2,1],
 	transformMat: 0,
 	origin: [0,0,0]
 };

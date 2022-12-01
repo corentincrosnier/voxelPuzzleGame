@@ -3,6 +3,6 @@
 
 //draw_surface(obj_scene.intersectMask,0,0);
 
-
+//draw_surface(global.world_surface,0,0);
 
 

@@ -2,13 +2,13 @@
 // You can write your code in this editor
 
 
-
+y=0
 
 object={
 	voxelMap:0,
 	voxelFrame:0,
 	vertexFrame:0,
-	position: [0,0,0],
+	position: [x-room_width/2,0,0],
 	rotation: [0,0,0],
 	scale: [1,1,1],
 	transformMat:0,

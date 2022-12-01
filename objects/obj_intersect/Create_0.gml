@@ -9,12 +9,8 @@ voxelMapZsize=array_length(obj_player.object.voxelMap[0][0]);
 voxelMap1d=array_create(voxelMapXsize*voxelMapYsize*voxelMapZsize);
 
 
-intersectMask=surface_create(1/obj_player.object.scale[0]*obj_scene.plane.scale[0]*2,1/obj_player.object.scale[0]*obj_scene.plane.scale[1]*2);
-intersectW=surface_get_width(intersectMask);
-intersectH=surface_get_height(intersectMask);
-intersectMask_=surface_create(intersectW,intersectH);
-show_debug_message(intersectW);
-show_debug_message(intersectH);
+//intersectMask=surface_create(1/obj_player.object.scale[0]*obj_scene.plane.scale[0]*2,1/obj_player.object.scale[0]*obj_scene.plane.scale[1]*2);
+
 
 intersectSizeUniform=shader_get_uniform(shd_intersect,"intersectSize");
 planeTransformUniformInt=shader_get_uniform(shd_intersect,"planeTransform");
