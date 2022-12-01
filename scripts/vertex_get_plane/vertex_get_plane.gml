@@ -4,7 +4,7 @@ function vertex_get_plane(vformat){
 	var buffer=vertex_create_buffer();
 	vertex_begin(buffer,vformat);
 	
-	var c=c_lime;
+	var c=c_silver;
 	
 	vertex_position_3d(buffer,-1,-1,0);
 	vertex_normal(buffer,0,0,1);

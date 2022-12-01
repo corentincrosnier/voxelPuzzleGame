@@ -17,14 +17,16 @@ var fd=keyboard_check(ord("Z"))-keyboard_check(ord("S"));
 var sd=keyboard_check(ord("Q"))-keyboard_check(ord("D"));
 var ud=keyboard_check(ord("E"))-keyboard_check(ord("A"));
 
-if keyboard_check(vk_escape) game_end();
 
-x+= dcos(dx)*fd+dsin(dx)*sd;
-y+= dsin(dx)*fd-dcos(dx)*sd;
-z+= ud;
+//x+= obj_player.object.position[0];
+x+= (dcos(dx)*fd+dsin(dx)*sd)*2;
+y+= (dsin(dx)*fd-dcos(dx)*sd)*2;
+
+z+= ud*2;
 
 //show_debug_message(string(x)+" "+string(y)+" "+string(z));
 
+//global.viewMat=matrix_build_lookat(x,y,z,x+5*dcos(dx)*dcos(dy),y+5*dsin(dx)*dcos(dy),z+5*dsin(dy),0,0,1);
 global.viewMat=matrix_build_lookat(x,y,z,x+5*dcos(dx)*dcos(dy),y+5*dsin(dx)*dcos(dy),z+5*dsin(dy),0,0,1);
 global.projMat=matrix_build_projection_perspective_fov(fov_y,16/9,0.1,10000);
 

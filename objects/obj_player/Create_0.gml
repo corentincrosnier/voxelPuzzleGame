@@ -2,8 +2,7 @@
 // You can write your code in this editor
 
 
-y=0
-
+translationSpeed=1;
 object={
 	voxelMap:0,
 	voxelFrame:0,

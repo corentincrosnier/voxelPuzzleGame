@@ -49,10 +49,10 @@ void main(){
 				float surfY=float(floor(float(ind)/float(surfSize)));
 				vec4 val=texture2D(voxelMap,vec2(surfX/float(surfSize),surfY/float(surfSize)));
 				if(val.r>0.0){
-					gl_FragColor=vec4(0.0,0.0,0.0,1.0);
+					gl_FragColor=vec4(0.2,0.7,0.3,1.0);
 				}
 				else{
-					gl_FragColor=vec4(1.0,1.0,1.0,1.0);
+					gl_FragColor=vec4(1.0,1.0,1.0,0.0);
 				}
 			}
 			else
